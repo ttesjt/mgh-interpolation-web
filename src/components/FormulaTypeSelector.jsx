@@ -40,11 +40,15 @@ const FormulaTypeSelector = () => {
       </label>
 
       <label>
-        Exponent:
+        Exponent: {power}
         <input
-          type="number"
+          type="range"
+          min="0"
+          max="10"
+          step="0.1"
           value={power}
           onChange={handlePowerChange}
+          style={{ width: '100%' }}
         />
       </label>
     </div>

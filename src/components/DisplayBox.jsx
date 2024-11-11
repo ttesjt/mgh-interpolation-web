@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useEffect, useContext } from 'react';
 import { ThemeConfig } from '../configs/ThemeConfig';
 import { FormulaContext } from '../contexts/FormulaContext';
 
@@ -10,6 +10,11 @@ const DisplayBox = ({ children, updateInterpolationFactor, updateInterpolationVa
     updateInterpolationFactor(value);
     updateInterpolationValue(selectedCurve.evaluator(value, power));
   }
+
+  useEffect(() => {
+    // when changed the curve, then just use the current factor, which is time, to update the value
+    updateInterpolationValue(selectedCurve.evaluator(factor, power));
+  }, [selectedCurve, power]);
   
 
   return (

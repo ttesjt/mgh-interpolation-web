@@ -2,6 +2,7 @@ import React from 'react';
 import FormulaTypeSelector from './FormulaTypeSelector';
 import FormulaDisplayer from './FormulaDisplayer';
 import InterpolationCurveWrapper from './areas/InterpolationCurveWrapper';
+import MotionInterpolation from './areas/MotionInterpolation';
 import ColorInterpolation from './areas/ColorInterpolation';
 import NumberInterpolation from './areas/NumberInterpolation';
 import FaceInterpolation from './areas/FaceInterpolation';
@@ -13,7 +14,7 @@ function MainPageLayout() {
     <InterpolationCurveWrapper />,
     <NumberInterpolation />,
     <ColorInterpolation />,
-    <FaceInterpolation />,
+    <MotionInterpolation />,
     <FaceInterpolation />,
   ];
 

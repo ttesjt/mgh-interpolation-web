@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import ColorPicker from './ColorPicker';
-import { interpolateColor, getLighter, getDarker } from '../utils/colorUtils';
-import { ThemeConfig } from '../configs/ThemeConfig';
-import DisplayBox from './DisplayBox';
+import ColorPicker from './pieces/ColorPicker';
+import { interpolateColor, getLighter, getDarker } from '../../utils/colorUtils';
+import { ThemeConfig } from '../../configs/ThemeConfig';
+import DisplayBox from '../DisplayBox';
 
 const ColorInterpolation = () => {
   const [color1, setColor1] = useState('#ff0000');

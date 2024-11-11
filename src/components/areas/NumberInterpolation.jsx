@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { interpolateColor, getLighter, getDarker } from '../utils/colorUtils';
-import { ThemeConfig } from '../configs/ThemeConfig';
-import DisplayBox from './DisplayBox';
-import { VerticalFillbar } from './VerticalFillbar';
+import { interpolateColor, getLighter, getDarker } from '../../utils/colorUtils';
+import { ThemeConfig } from '../../configs/ThemeConfig';
+import DisplayBox from '../DisplayBox';
+import { VerticalFillbar } from './pieces/VerticalFillbar';
 
 const NumberInterpolation = () => {
   const [factor, setFactor] = useState(0);

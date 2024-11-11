@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import SmileFace from './SmileFace';
-import DisplayBox from './DisplayBox';
+import SmileFace from './pieces/SmileFace';
+import DisplayBox from '../DisplayBox';
 
 const FaceInterpolation = () => {
   const [factor, setFactor] = useState(0);

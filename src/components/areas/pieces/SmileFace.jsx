@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { interpolateColor } from '../utils/colorUtils';
+import { interpolateColor } from '../../../utils/colorUtils';
 
 const SmileFace = ({ factor }) => {
   const points = {

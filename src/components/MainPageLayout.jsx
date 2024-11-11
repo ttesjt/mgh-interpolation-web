@@ -1,11 +1,12 @@
 import React from 'react';
-import ColorInterpolation from './ColorInterpolation';
-import NumberInterpolation from './NumberInterpolation';
-import FaceInterpolation from './FaceInterpolation';
+import InterpolationCurveWrapper from './areas/InterpolationCurveWrapper';
+import ColorInterpolation from './areas/ColorInterpolation';
+import NumberInterpolation from './areas/NumberInterpolation';
+import FaceInterpolation from './areas/FaceInterpolation';
 
 function MainPageLayout() {
   const components = [
-    <NumberInterpolation />,
+    <InterpolationCurveWrapper />,
     <NumberInterpolation />,
     <ColorInterpolation />,
     <FaceInterpolation />,

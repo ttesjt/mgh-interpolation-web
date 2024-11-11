@@ -8,12 +8,10 @@ const InterpolationCurveWrapper = () => {
 
 
   const updateInterpolationFactor = (value) => {
-    console.log(`Interpolation factor: ${value}`);
     setFactor(parseFloat(value));
   }
 
   const updateInterpolationValue = (value) => {
-    console.log(`Interpolated value: ${value}`);
     setInterpolateValue(value);
   }
 

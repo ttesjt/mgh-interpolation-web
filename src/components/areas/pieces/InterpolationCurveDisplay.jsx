@@ -46,36 +46,8 @@ const InterpolationCurveDisplay = () => {
     context.stroke();
   };
 
-  const handleCurveChange = (event) => {
-    setSelectedCurve(event.target.value);
-  };
-
-  const handlePowerChange = (event) => {
-    setPower(parseFloat(event.target.value));
-  };
-
   return (
     <div>
-      <label>
-        Curve Type:
-        <select value={selectedCurve} onChange={handleCurveChange}>
-          {Object.keys(curves).map((key) => (
-            <option key={key} value={key}>
-              {curves[key].name}
-            </option>
-          ))}
-        </select>
-      </label>
-
-      <label>
-        Exponent:
-        <input
-          type="number"
-          value={power}
-          onChange={handlePowerChange}
-        />
-      </label>
-
       <MathJaxContext>
         <div id="expression">
           <MathJax>{`\\(${expression}\\)`}</MathJax>

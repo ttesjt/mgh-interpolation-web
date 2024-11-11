@@ -10,9 +10,7 @@ function App() {
   return (
     <FormulaProvider>
       <div>
-        <div style={{ marginBottom: 30 }} />
-        <FormulaTypeSelector />
-        <div style={{ marginBottom: 100 }} />
+        {/* <div style={{ marginBottom: 10 }} /> */}
         <MainPageLayout />
       </div>
     </FormulaProvider>

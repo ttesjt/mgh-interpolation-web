@@ -1,4 +1,6 @@
 import React from 'react';
+import FormulaTypeSelector from './FormulaTypeSelector';
+import FormulaDisplayer from './FormulaDisplayer';
 import InterpolationCurveWrapper from './areas/InterpolationCurveWrapper';
 import ColorInterpolation from './areas/ColorInterpolation';
 import NumberInterpolation from './areas/NumberInterpolation';
@@ -6,6 +8,8 @@ import FaceInterpolation from './areas/FaceInterpolation';
 
 function MainPageLayout() {
   const components = [
+    <FormulaTypeSelector />,
+    <FormulaDisplayer />,
     <InterpolationCurveWrapper />,
     <NumberInterpolation />,
     <ColorInterpolation />,

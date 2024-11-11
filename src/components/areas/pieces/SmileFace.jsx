@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { interpolateColor } from '../../../utils/colorUtils';
 
-const SmileFace = ({ factor }) => {
+const SmileFace = ({ interpolateValue }) => {
   const points = {
     happy: { start: [55, 110], control: [100, 160], end: [145, 110] },
     sad: { start: [55, 130], control: [100, 80], end: [145, 130] },
@@ -9,22 +9,22 @@ const SmileFace = ({ factor }) => {
 
   const interpolatePoints = (start, end, t) => start + (end - start) * t;
 
-  const startX = interpolatePoints(points.happy.start[0], points.sad.start[0], factor);
-  const startY = interpolatePoints(points.happy.start[1], points.sad.start[1], factor);
-  const controlX = interpolatePoints(points.happy.control[0], points.sad.control[0], factor);
-  const controlY = interpolatePoints(points.happy.control[1], points.sad.control[1], factor);
-  const endX = interpolatePoints(points.happy.end[0], points.sad.end[0], factor);
-  const endY = interpolatePoints(points.happy.end[1], points.sad.end[1], factor);
+  const startX = interpolatePoints(points.happy.start[0], points.sad.start[0], interpolateValue);
+  const startY = interpolatePoints(points.happy.start[1], points.sad.start[1], interpolateValue);
+  const controlX = interpolatePoints(points.happy.control[0], points.sad.control[0], interpolateValue);
+  const controlY = interpolatePoints(points.happy.control[1], points.sad.control[1], interpolateValue);
+  const endX = interpolatePoints(points.happy.end[0], points.sad.end[0], interpolateValue);
+  const endY = interpolatePoints(points.happy.end[1], points.sad.end[1], interpolateValue);
 
   const happyColor = '#ffff00';
   const sadColor = '#ff3000';
   const lineColor = '#202020';
 
-  const activeColor = interpolateColor(happyColor, sadColor, factor);
+  const activeColor = interpolateColor(happyColor, sadColor, interpolateValue);
   let text = "YES!";
-  if (factor > 0.7) {
+  if (interpolateValue > 0.7) {
     text = "NOT AT ALL!";
-  } else if (factor > 0.3) {
+  } else if (interpolateValue > 0.3) {
     text = "MAYBE...";
   }
 

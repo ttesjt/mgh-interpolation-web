@@ -4,16 +4,23 @@ import DisplayBox from '../DisplayBox';
 
 const FaceInterpolation = () => {
   const [factor, setFactor] = useState(0);
+  const [interpolateValue, setInterpolateValue] = useState(0);
 
 
-  const onInterpolationFactorChange = (e) => {
-    setFactor(parseFloat(e.target.value));
+  const updateInterpolationFactor = (value) => {
+    console.log(`Interpolation factor: ${value}`);
+    setFactor(parseFloat(value));
+  }
+
+  const updateInterpolationValue = (value) => {
+    console.log(`Interpolated value: ${value}`);
+    setInterpolateValue(value);
   }
 
   return (
-    <DisplayBox factor={factor} onInterpolationFactorChange={onInterpolationFactorChange}>
+    <DisplayBox factor={factor} updateInterpolationFactor={updateInterpolationFactor} updateInterpolationValue={updateInterpolationValue}>
       <h2>Are These Examples Helpful?</h2>
-      <SmileFace factor={factor} />
+      <SmileFace interpolateValue={interpolateValue} />
     </DisplayBox>
   );
 };

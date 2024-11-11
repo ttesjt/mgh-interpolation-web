@@ -8,16 +8,23 @@ const ColorInterpolation = () => {
   const [color1, setColor1] = useState('#ff0000');
   const [color2, setColor2] = useState('#0000ff');
   const [factor, setFactor] = useState(0);
+  const [interpolateValue, setInterpolateValue] = useState(0);
 
 
-  const onInterpolationFactorChange = (e) => {
-    setFactor(parseFloat(e.target.value));
+  const updateInterpolationFactor = (value) => {
+    console.log(`Interpolation factor: ${value}`);
+    setFactor(parseFloat(value));
   }
 
-  const interpolatedColor = interpolateColor(color1, color2, factor);
+  const updateInterpolationValue = (value) => {
+    console.log(`Interpolated value: ${value}`);
+    setInterpolateValue(value);
+  }
+
+  const interpolatedColor = interpolateColor(color1, color2, interpolateValue);
 
   return (
-    <DisplayBox factor={factor} onInterpolationFactorChange={onInterpolationFactorChange}>
+    <DisplayBox factor={factor} updateInterpolationFactor={updateInterpolationFactor} updateInterpolationValue={updateInterpolationValue}>
       <h2>Interpolates Between Colors</h2>
       <div
         style={{

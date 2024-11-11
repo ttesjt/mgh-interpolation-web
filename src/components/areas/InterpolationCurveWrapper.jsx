@@ -4,16 +4,23 @@ import InterpolationCurveDisplay from './pieces/InterpolationCurveDisplay';
 
 const InterpolationCurveWrapper = () => {
   const [factor, setFactor] = useState(0);
+  const [interpolateValue, setInterpolateValue] = useState(0);
 
 
-  const onInterpolationFactorChange = (e) => {
-    setFactor(parseFloat(e.target.value));
+  const updateInterpolationFactor = (value) => {
+    console.log(`Interpolation factor: ${value}`);
+    setFactor(parseFloat(value));
+  }
+
+  const updateInterpolationValue = (value) => {
+    console.log(`Interpolated value: ${value}`);
+    setInterpolateValue(value);
   }
 
   return (
-    <DisplayBox factor={factor} onInterpolationFactorChange={onInterpolationFactorChange}>
+    <DisplayBox factor={factor} updateInterpolationFactor={updateInterpolationFactor} updateInterpolationValue={updateInterpolationValue}>
       <h2>Interpolates Curves</h2>
-      <InterpolationCurveDisplay />
+      <InterpolationCurveDisplay time={factor} />
     </DisplayBox>
   );
 };

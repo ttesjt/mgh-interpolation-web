@@ -1,7 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { ThemeConfig } from '../configs/ThemeConfig';
+import { FormulaContext } from '../contexts/FormulaContext';
 
-const DisplayBox = ({ children, onInterpolationFactorChange, factor }) => {
+const DisplayBox = ({ children, updateInterpolationFactor, updateInterpolationValue, factor }) => {
+  const { selectedCurve, power } = useContext(FormulaContext);
+
+  const onSliderChange = (e) => {
+    const value = parseFloat(e.target.value);
+    updateInterpolationFactor(value);
+    updateInterpolationValue(selectedCurve.evaluator(value, power));
+  }
+  
+
   return (
     <div
       style={{
@@ -33,7 +43,7 @@ const DisplayBox = ({ children, onInterpolationFactorChange, factor }) => {
             max="1"
             step="0.01"
             value={factor}
-            onChange={onInterpolationFactorChange}
+            onChange={onSliderChange}
           />
           <label>Interpolation Factor: {factor.toFixed(2)}</label>
         </div>

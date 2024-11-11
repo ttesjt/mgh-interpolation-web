@@ -6,20 +6,25 @@ import { VerticalFillbar } from './pieces/VerticalFillbar';
 
 const NumberInterpolation = () => {
   const [factor, setFactor] = useState(0);
-  const [multiplier, setMultiplier] = useState(0);
+  const [interpolateValue, setInterpolateValue] = useState(0);
 
-  const onInterpolationFactorChange = (e) => {
-    setFactor(parseFloat(e.target.value));
-    // for now, the multiplier is the same as the factor
-    setMultiplier(parseFloat(e.target.value));
-  };
+
+  const updateInterpolationFactor = (value) => {
+    console.log(`Interpolation factor: ${value}`);
+    setFactor(parseFloat(value));
+  }
+
+  const updateInterpolationValue = (value) => {
+    console.log(`Interpolated value: ${value}`);
+    setInterpolateValue(value);
+  }
 
   const backgroundColor = getLighter(ThemeConfig.backgroundColor, 0.2);
 
   const mediaSectionHeight = 220;
   const mediaSectionTextHeight = 15;
   return (
-    <DisplayBox factor={factor} onInterpolationFactorChange={onInterpolationFactorChange}>
+    <DisplayBox factor={factor} updateInterpolationFactor={updateInterpolationFactor} updateInterpolationValue={updateInterpolationValue}>
       <h2>Value on the Curve</h2>
       <div
         style={{
@@ -41,8 +46,8 @@ const NumberInterpolation = () => {
           width: '50%',
           display: 'flex', flexDirection: 'column', alignItems: 'center',
         }}>
-          <label style={{ marginBottom: 5 }}>{multiplier.toFixed(2)}</label>
-          <VerticalFillbar backgroundColor={backgroundColor} fillColor='#0000ff' heightInNumber={mediaSectionHeight - mediaSectionTextHeight * 2} width={30} capValue={1} fillValue={multiplier} />
+          <label style={{ marginBottom: 5 }}>{interpolateValue.toFixed(2)}</label>
+          <VerticalFillbar backgroundColor={backgroundColor} fillColor='#0000ff' heightInNumber={mediaSectionHeight - mediaSectionTextHeight * 2} width={30} capValue={1} fillValue={interpolateValue} />
           <label style={{ marginTop: 5 }}>Value On Curve</label>
         </div>
       </div>

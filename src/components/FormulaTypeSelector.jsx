@@ -20,7 +20,9 @@ const FormulaTypeSelector = () => {
     <div style={{
       display: 'flex',
       flexDirection: 'column',
-      width: '450px',
+      justifyContent: 'space-around',
+      height: '100px',
+      width: '400px',
       padding: `${ThemeConfig.displayAreaPadding}px`,
       paddingLeft: `${ThemeConfig.displayAreaPadding * 2}px`,
       paddingRight: `${ThemeConfig.displayAreaPadding * 2}px`,

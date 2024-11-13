@@ -28,7 +28,9 @@ const FormulaDisplayer = () => {
     }}>
       <MathJaxContext>
         <div id="expression" style={{ fontSize: '30px' }}>
-          <MathJax>{`\\(${expression}\\)`}</MathJax>
+          <MathJax inline dynamic>
+            {`\\(${expression}\\)`}
+          </MathJax>
         </div>
       </MathJaxContext>
     </div>

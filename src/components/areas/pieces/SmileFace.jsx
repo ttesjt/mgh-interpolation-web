@@ -32,15 +32,6 @@ const SmileFace = ({ interpolateValue }) => {
     <div style={{
       position: 'relative',
     }}>
-      {/* <div style={{
-        width: "0px", height: "0px",
-        top: '100px',
-        position: 'absolute',
-        backgroundColor: 'transparent',
-        boxShadow: '0 0 50px 25px rgba(255, 223, 0, 0.2)',
-        borderRadius: '50%',
-      }}> 
-      </div>*/}
       <svg width="200" height="200">
         <circle cx="100" cy="100" r="90" fill={activeColor} />
         <circle cx="75" cy="80" r="9" fill={lineColor} />

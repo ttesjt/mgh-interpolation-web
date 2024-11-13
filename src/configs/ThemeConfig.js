@@ -1,6 +1,7 @@
 export class ThemeConfig {
   static primaryColor = '#ffffff';
   static backgroundColor = '#404040';
+  static textColor = '#ffffff';
   static displayAreaBorderRadius = 30;
   static displayAreaPadding = 15;
   static displayContentBorderRadius = 20;

@@ -32,7 +32,7 @@ const FormulaTypeSelector = () => {
     }}>
       <label>
         Curve Type:
-        <select value={selectedCurve.name} onChange={handleCurveChange}>
+        <select value={selectedCurve.name} onChange={handleCurveChange} style={{ color: ThemeConfig.textColor }}>
           {Object.keys(curves).map((key) => (
             <option key={key} value={key}>
               {curves[key].name}

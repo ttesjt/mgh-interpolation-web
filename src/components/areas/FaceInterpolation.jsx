@@ -17,7 +17,7 @@ const FaceInterpolation = () => {
 
   return (
     <DisplayBox factor={factor} updateInterpolationFactor={updateInterpolationFactor} updateInterpolationValue={updateInterpolationValue}>
-      <h2>Are These Examples Helpful?</h2>
+      <h2>Ready to Test Your Knowledge?</h2>
       <SmileFace interpolateValue={interpolateValue} />
     </DisplayBox>
   );

@@ -10,7 +10,6 @@ function App() {
   return (
     <FormulaProvider>
       <div>
-        {/* <div style={{ marginBottom: 10 }} /> */}
         <MainPageLayout />
       </div>
     </FormulaProvider>
